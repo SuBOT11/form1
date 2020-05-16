@@ -62,7 +62,7 @@ submit.addEventListener("click", (e) => {
   const message = {
     message: textarea.value,
     sent_at: firebase.firestore.Timestamp.fromDate(now),
-    name:form.name.value,
+    name:form.names.value,
 
   };
   db.collection("message").add(message);
