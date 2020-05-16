@@ -7,7 +7,7 @@ const formWrapper = document.querySelector(".form-wrapper");
 const newDiv = document.querySelector(".info");
 const textarea = document.querySelector("#write");
 const wrapper = document.querySelector('.wrapper')
-console.log(textarea);
+
 
 const namePattern = /^[a-zA-Z]{3,}/;
 const agePattern = /^[0-9]{2}/;
@@ -61,6 +61,9 @@ submit.addEventListener("click", (e) => {
   const now = new Date();
   const message = {
     message: textarea.value,
+    sent_at: firebase.firestore.Timestamp.fromDate(now),
+    name:form.name.value,
+
   };
   db.collection("message").add(message);
 });
