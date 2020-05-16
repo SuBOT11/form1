@@ -6,6 +6,7 @@ const submit = document.querySelector(".last button");
 const formWrapper = document.querySelector(".form-wrapper");
 const newDiv = document.querySelector(".info");
 const textarea = document.querySelector("#write");
+const wrapper = document.querySelector('.wrapper')
 console.log(textarea);
 
 const namePattern = /^[a-zA-Z]{3,}/;
@@ -50,6 +51,7 @@ form.addEventListener("keyup", (e) => {
 submit.addEventListener("click", (e) => {
   e.preventDefault();
   formWrapper.innerHTML = "";
+  wrapper.style.height = '110vh'
   formWrapper.classList.add("new");
   newDiv.removeAttribute("style");
   window.scrollTo(0, 0);
